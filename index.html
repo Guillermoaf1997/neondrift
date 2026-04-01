@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#08111f" />
+  <title>Neon Drift</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <span class="brand__dot"></span>
+        <span>Neon Drift</span>
+      </div>
+      <button id="muteButton" class="icon-button" type="button" aria-label="Activar o desactivar sonido">🔊</button>
+    </header>
+
+    <main class="game-layout">
+      <section class="game-panel">
+        <canvas id="gameCanvas" width="540" height="960" aria-label="Área de juego"></canvas>
+
+        <div id="startScreen" class="overlay overlay--visible">
+          <div class="card">
+            <p class="eyebrow">Arcade survival</p>
+            <h1>Neon Drift</h1>
+            <p>Esquiva drones, recoge núcleos y sobrevive el máximo tiempo posible.</p>
+
+            <div class="feature-list">
+              <div><strong>PC:</strong> WASD / flechas</div>
+              <div><strong>Móvil:</strong> arrastra el dedo por la pantalla</div>
+              <div><strong>Objetivo:</strong> sumar puntos, batir tu récord y dominar la velocidad</div>
+            </div>
+
+            <div class="actions">
+              <button id="startButton" class="primary-button" type="button">Jugar</button>
+              <button id="howToPlayButton" class="secondary-button" type="button">Cómo jugar</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="instructionsScreen" class="overlay">
+          <div class="card">
+            <p class="eyebrow">Instrucciones</p>
+            <h2>Cómo se juega</h2>
+            <ul class="instructions-list">
+              <li>Muévete para esquivar enemigos rojos.</li>
+              <li>Recoge núcleos azules para ganar puntos y energía.</li>
+              <li>Al llenar la barra de energía aparece un escudo temporal.</li>
+              <li>La dificultad sube con el tiempo: más enemigos y más rápidos.</li>
+            </ul>
+            <div class="actions">
+              <button id="backToMenuButton" class="secondary-button" type="button">Volver</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="gameOverScreen" class="overlay">
+          <div class="card">
+            <p class="eyebrow">Fin de la partida</p>
+            <h2>Buen intento</h2>
+            <p id="finalScoreText">Puntuación: 0</p>
+            <p id="bestScoreText">Récord: 0</p>
+            <div class="actions">
+              <button id="restartButton" class="primary-button" type="button">Reintentar</button>
+              <button id="menuButton" class="secondary-button" type="button">Menú</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="info-card">
+          <h2>Controles</h2>
+          <p><strong>Escritorio:</strong> WASD o flechas</p>
+          <p><strong>Móvil:</strong> toca y arrastra</p>
+        </div>
+
+        <div class="info-card">
+          <h2>Bucle</h2>
+          <p>Sobrevive → recoge núcleos → activa escudo → aguanta la siguiente oleada.</p>
+        </div>
+
+        <div class="info-card">
+          <h2>Meta</h2>
+          <p>El primer objetivo es superar 1.000 puntos. El verdadero objetivo es dominar el ritmo.</p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
